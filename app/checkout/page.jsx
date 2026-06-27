@@ -46,7 +46,7 @@ export default function CheckoutPage() {
       localStorage.setItem('order', JSON.stringify({
         tracker, product: product.name, amount: product.price, customer: form,
       }))
-     const baseCheckoutUrl = 'https://sandbox.api.getsafepay.com/components'
+const baseCheckoutUrl = 'https://sandbox.api.getsafepay.com/checkout'
 const redirectUrl = `${baseCheckoutUrl}?env=sandbox&beacon=${tracker}&source=website&redirect_url=${window.location.origin}/success&cancel_url=${window.location.origin}/checkout`
       window.location.href = redirectUrl
     } catch (err) {
