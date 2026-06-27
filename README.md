@@ -1,36 +1,138 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💳 Safepay Payment Integration
 
-## Getting Started
+A full-stack payment system built with **Next.js** and **Safepay** — Pakistan's leading payment gateway. This project demonstrates a real-world checkout experience with secure backend API integration.
 
-First, run the development server:
+🔗 **Live Demo:** [safepay-payment-beta.vercel.app](https://safepay-payment-beta.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ✨ Features
+
+- 🔒 Secure server-side API key handling
+- 💳 Real payment processing via Safepay
+- 📱 Fully responsive — works on mobile & desktop
+- 🎨 Clean, modern checkout UI
+- ⚡ Built with Next.js App Router
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | Next.js 15, React, React Icons |
+| Backend | Next.js API Routes (Node.js) |
+| Payment Gateway | Safepay (Pakistan) |
+| Deployment | Vercel |
+| HTTP Client | Axios |
+
+---
+
+## 🚀 How It Works
+
+```
+User fills checkout form
+        ↓
+Frontend calls /api/payment (Next.js Backend)
+        ↓
+Backend sends request to Safepay API
+        ↓
+Safepay returns a payment tracker token
+        ↓
+User is redirected to Safepay hosted checkout
+        ↓
+Payment complete → Success page
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚙️ Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Clone the repo
+```bash
+git clone https://github.com/mehreencodes/safepay-payment.git
+cd safepay-payment
+```
 
-## Learn More
+### 2. Install dependencies
+```bash
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Setup environment variables
+Create a `.env.local` file in the root:
+```env
+NEXT_PUBLIC_SAFEPAY_PUBLIC_KEY=your_public_key
+SAFEPAY_SECRET_KEY=your_secret_key
+NEXT_PUBLIC_SAFEPAY_ENV=sandbox
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> Get your keys from [sandbox.api.getsafepay.com](https://sandbox.api.getsafepay.com)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 4. Run the development server
+```bash
+npm run dev
+```
 
-## Deploy on Vercel
+Open [http://localhost:3000](http://localhost:3000)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🧪 Test Payment
+
+Use these test card details on the Safepay checkout page:
+
+| Field | Value |
+|---|---|
+| Card Number | `4111 1111 1111 1111` |
+| Expiry | `12/26` |
+| CVV | `123` |
+
+---
+
+## 📁 Project Structure
+
+```
+safepay-payment/
+├── app/
+│   ├── api/
+│   │   └── payment/
+│   │       └── route.js      # Backend API — Safepay integration
+│   ├── checkout/
+│   │   └── page.jsx          # Checkout page UI
+│   ├── success/
+│   │   └── page.jsx          # Payment success page
+│   └── page.tsx              # Redirects to /checkout
+├── .env.local                # API keys (not committed)
+└── README.md
+```
+
+---
+
+## 🔐 Security
+
+- Secret API key is stored server-side only — never exposed to the frontend
+- All payments are processed through Safepay's PCI DSS compliant infrastructure
+- 256-bit SSL encryption on all transactions
+
+---
+
+## 📦 Going to Production
+
+1. Create a Safepay Production account at [getsafepay.com](https://getsafepay.com)
+2. Submit KYC documents (CNIC + bank account)
+3. Get production API keys
+4. Update `.env.local`:
+```env
+NEXT_PUBLIC_SAFEPAY_PUBLIC_KEY=your_production_public_key
+SAFEPAY_SECRET_KEY=your_production_secret_key
+NEXT_PUBLIC_SAFEPAY_ENV=production
+```
+
+---
+
+## 👩‍💻 Author
+
+**Mehreen Khalid**  
+[GitHub](https://github.com/mehreencodes) · [LinkedIn](https://linkedin.com/in/mehreencodes)
+
