@@ -134,5 +134,5 @@ NEXT_PUBLIC_SAFEPAY_ENV=production
 ## 👩‍💻 Author
 
 **Mehreen Khalid**  
-[GitHub](https://github.com/mehreencodes) · [LinkedIn](https://linkedin.com/in/mehreencodes)
+[GitHub](https://github.com/mehreencodes) · [LinkedIn](https://www.linkedin.com/in/mehreen-khalid-53bbbb361/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BYjGFe%2B5cSimaBCrfvbx5mg%3D%3D)
 
